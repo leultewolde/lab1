@@ -66,4 +66,28 @@ public class Product {
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
+
+    public String toJSON() {
+        return "\t{" +
+                "\"productID\": "+ productId +
+                "\"name\": "+ name +
+                "\"dateSupplied\": "+ dateSupplied +
+                "\"quantityInStock\": "+ quantityInStock +
+                "\"unitPrice\": "+ unitPrice +
+                "}";
+    }
+
+    public String toXML() {
+        return "\t<product " +
+                "productID=\""+ productId +"\" " +
+                "name=\""+ name +"\" " +
+                "dateSupplied=\""+ dateSupplied +"\" " +
+                "quantityInStock=\""+ quantityInStock +"\" " +
+                "unitPrice=\""+ unitPrice +"\" " +
+                "/>";
+    }
+
+    public String toCSV() {
+        return productId + "," + name + "," + dateSupplied + "," + quantityInStock + "," + unitPrice;
+    }
 }
